@@ -2,20 +2,20 @@ import { ChangeEvent, MouseEvent, useState } from 'react'
 
 function ButtonHandler() {
     const showAlert = (event: MouseEvent<HTMLButtonElement>) => {
-        console.log(event)
+        console.log(event);
     }
 
-    return <button onClick={showAlert}>show</button>
+    return <button onClick={showAlert}>show</button>;
 }
 
 function InputHandler() {
-    const [value, setValue] = useState<string>('')
+    const [todo, setTodo] = useState<string>('')
 
-    const inputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value)
+    const updateTodo = (event: ChangeEvent<HTMLInputElement>) => {
+        setTodo(event.target.value);
     }
 
-    return <input type="text" value={value} onChange={inputChangeHandler} />
+    return <input type="text" value={todo} onChange={updateTodo} />;
 }
 
-export { ButtonHandler, InputHandler }
+export { ButtonHandler, InputHandler };
